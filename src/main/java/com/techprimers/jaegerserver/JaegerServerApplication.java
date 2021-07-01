@@ -8,16 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class JaegerServerApplication {
+	
+	@GetMapping("/")
+	public String welcome() {
+		System.out.print("change enabled");
+		return "welcome to java!";
+		
+	}
 
-@GetMapping("/")
-public String welcome() {
-return "welcome to java!";
 
-}
-
-
-public static void main(String[] args) {
-SpringApplication.run(JaegerServerApplication.class, args);
-}
+	public static void main(String[] args) {
+		SpringApplication.run(JaegerServerApplication.class, args);
+	}
 
 }
