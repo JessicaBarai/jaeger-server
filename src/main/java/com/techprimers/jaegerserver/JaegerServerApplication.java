@@ -18,7 +18,7 @@ public class JaegerServerApplication {
 
 
 	public static void main(String[] args) {
-		System.out.print("STARTING!");
+		System.out.print("STARTING WITH PROPERTIES CHANGED!");
 		SpringApplication.run(JaegerServerApplication.class, args);
 	}
 
