@@ -12,7 +12,7 @@ public class JaegerServerApplication {
 	@GetMapping("/")
 	public String welcome() {
 		System.out.print("change enabled");
-		return "welcome to java!";
+		return "Hello from server!";
 		
 	}
 
