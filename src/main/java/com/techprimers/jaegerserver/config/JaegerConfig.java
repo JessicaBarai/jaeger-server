@@ -27,7 +27,7 @@ public class JaegerConfig {
 	public JaegerTracer jaegerTracer() {
 			  SamplerConfiguration samplerConfig = SamplerConfiguration.fromEnv().withType(ConstSampler.TYPE).withParam(1);
 			  ReporterConfiguration reporterConfig = ReporterConfiguration.fromEnv().withLogSpans(true).withSender(
-			      SenderConfiguration.fromEnv().withAgentHost("localhost").withAgentPort(6831));
+			      SenderConfiguration.fromEnv().withAgentHost("aeger-all-in-one-inmemory-agent").withAgentPort(6831));
 			  io.jaegertracing.Configuration config =  new io.jaegertracing.Configuration("jaeger-server").withSampler(samplerConfig).withReporter(reporterConfig);
 			  return config.getTracer();
 			
