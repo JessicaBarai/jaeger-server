@@ -8,6 +8,7 @@ import io.jaegertracing.internal.samplers.ConstSampler;
 
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -15,9 +16,12 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Configuration
 public class JaegerConfig {
 //WebClient is going to be used to connect client to server, , reactive client to perform HTTP requests, exposing a fluent, reactive API over underlying HTTP client libraries such as Reactor Netty.
+	@Value("${url}")
+	private String urlString;
+	
 	@Bean
 	public WebClient webClient() {
-		return WebClient.create("http://jaeger-server-git:8082");
+		return WebClient.create(urlString);
 	}
 
 	//this is wrong, it should listen to properties file or we should use enviroment variable. Look it up!
